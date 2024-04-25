@@ -19,7 +19,7 @@ const homePageSection = [
         path : "/movie/upcoming"
     },
     {
-        title : "Today\'s Trending Movies",
+        title : "Weekly Trending Movies",
         path : "/trending/movie/week"
     },
     {
@@ -175,101 +175,15 @@ const createMovieList = function({ results : movieList}, title) {
         </div>
 
         <div class="slider-list">
-            <div class="slider-inner">
-                <div class="movie-card">
-                    <figure class="poster-box card-banner">
-                        <img src="./assets/images/slider-control.jpg" alt="Puss in Boots: The Last Wish" class="img-cover">
-                    </figure>
-                    <h4 class="title">
-                        Puss in Boots: The Last Wish
-                    </h4>
-                    <div class="meta-list">
-                        <div class="meta-item">
-                            <img src="./assets/images/star.png" width="24" height="20" loading="lazy" alt="rating">
-                            <span class="span">8.4</span>
-                        </div>
-                        <div class="card-badge">2022</div>
-                    </div>
-
-                    <a href="./detail.html" class="card-btn" title="Puss in Boots: The Last Wish"></a>
-                </div>
-                
-                <div class="movie-card">
-                    <figure class="poster-box card-banner">
-                        <img src="./assets/images/slider-control.jpg" alt="Puss in Boots: The Last Wish" class="img-cover">
-                    </figure>
-                    <h4 class="title">
-                        Puss in Boots: The Last Wish
-                    </h4>
-                    <div class="meta-list">
-                        <div class="meta-item">
-                            <img src="./assets/images/star.png" width="24" height="20" loading="lazy" alt="rating">
-                            <span class="span">8.4</span>
-                        </div>
-                        <div class="card-badge">2022</div>
-                    </div>
-
-                    <a href="./detail.html" class="card-btn" title="Puss in Boots: The Last Wish"></a>
-                </div>
-                
-                <div class="movie-card">
-                    <figure class="poster-box card-banner">
-                        <img src="./assets/images/slider-control.jpg" alt="Puss in Boots: The Last Wish" class="img-cover">
-                    </figure>
-                    <h4 class="title">
-                        Puss in Boots: The Last Wish
-                    </h4>
-                    <div class="meta-list">
-                        <div class="meta-item">
-                            <img src="./assets/images/star.png" width="24" height="20" loading="lazy" alt="rating">
-                            <span class="span">8.4</span>
-                        </div>
-                        <div class="card-badge">2022</div>
-                    </div>
-
-                    <a href="./detail.html" class="card-btn" title="Puss in Boots: The Last Wish"></a>
-                </div>
-                
-                <div class="movie-card">
-                    <figure class="poster-box card-banner">
-                        <img src="./assets/images/slider-control.jpg" alt="Puss in Boots: The Last Wish" class="img-cover">
-                    </figure>
-                    <h4 class="title">
-                        Puss in Boots: The Last Wish
-                    </h4>
-                    <div class="meta-list">
-                        <div class="meta-item">
-                            <img src="./assets/images/star.png" width="24" height="20" loading="lazy" alt="rating">
-                            <span class="span">8.4</span>
-                        </div>
-                        <div class="card-badge">2022</div>
-                    </div>
-
-                    <a href="./detail.html" class="card-btn" title="Puss in Boots: The Last Wish"></a>
-                </div>
-                
-                <div class="movie-card">
-                    <figure class="poster-box card-banner">
-                        <img src="./assets/images/slider-control.jpg" alt="Puss in Boots: The Last Wish" class="img-cover">
-                    </figure>
-                    <h4 class="title">
-                        Puss in Boots: The Last Wish
-                    </h4>
-                    <div class="meta-list">
-                        <div class="meta-item">
-                            <img src="./assets/images/star.png" width="24" height="20" loading="lazy" alt="rating">
-                            <span class="span">8.4</span>
-                        </div>
-                        <div class="card-badge">2022</div>
-                    </div>
-
-                    <a href="./detail.html" class="card-btn" title="Puss in Boots: The Last Wish"></a>
-                </div>
-            </div>
+            <div class="slider-inner"></div>
         </div>
     `;
 
     for(const movie of movieList){
         const movieCard = createMovieCard(movie); //called from movie-card.js
+
+        movieListElem.querySelector(".slider-inner").appendChild(movieCard);
     }
+
+    pageContent.appendChild(movieListElem);
 }
