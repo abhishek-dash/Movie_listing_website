@@ -7,7 +7,6 @@ export function sidebar(){
 
     // fetch all genres e.g. :[{"id":"123","name","Action"}] then change genre format e.g. :{"123":"Action"}
     fetchDataFromServer(`https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}`, function({ genres }) {
-
         for(const { id , name } of genres){
             genreList[id] = name
         }
