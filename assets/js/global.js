@@ -18,3 +18,8 @@ addEventOnElements(searchTogglers,'click',() => {
 const getMovieDetail = (movieId) => {
     window.localStorage.setItem("movieId", String(movieId));
 }
+
+const getMovieList = (urlParam,genreName) => {
+    window.localStorage.setItem("urlParam",urlParam);
+    window.localStorage.setItem("genreName",genreName);
+}
